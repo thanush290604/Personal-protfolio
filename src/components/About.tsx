@@ -15,13 +15,14 @@ const About: React.FC = () => {
           <div className="lg:col-span-3 animate-fade-in-up animation-delay-200">
             <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
               <p className="text-xl lg:text-2xl leading-relaxed text-gray-300">
-                Final-year <span className="text-cyan-400 font-semibold">B.Tech (CSE - Data Science & AI)</span> student 
-                with a strong academic record and hands-on experience in AI, machine learning, and community-driven projects. 
+                <span className="text-cyan-400 font-semibold">B.Tech (CSE - Data Science & AI)</span> graduate 
+                and <span className="text-purple-400 font-semibold">AI Engineer</span> with a strong academic record 
+                and hands-on experience in AI, machine learning, and community-driven projects. 
               </p>
               <p className="text-xl lg:text-2xl leading-relaxed text-gray-300 mt-6">
                 Passionate about <span className="text-purple-400 font-semibold">sustainability</span>, 
-                <span className="text-pink-400 font-semibold"> smart city solutions</span>, and 
-                <span className="text-cyan-400 font-semibold"> AI-integrated safety systems</span>. 
+                <span className="text-pink-400 font-semibold"> innovative problem-solving</span>, and 
+                <span className="text-cyan-400 font-semibold"> creating technologies that make a meaningful difference</span>. 
               </p>
               <p className="text-xl lg:text-2xl leading-relaxed text-gray-300 mt-6">
                 Proven leadership, teamwork, and innovation skills, with a commitment to 

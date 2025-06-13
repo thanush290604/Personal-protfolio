@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
             {/* Resume Download Button */}
             <div className="mb-12">
               <a
-                href="https://drive.google.com/uc?export=download&id=1en9909HlIUC6GWNgsiYBQCx6-7-6rHWv"
+                href="/images/Thanush kannan Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300"
