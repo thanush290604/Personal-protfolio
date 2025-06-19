@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://thanush29-ai.web.app/sitemap.xml
+
+# Disallow certain paths if needed
+Disallow: /build/
+Disallow: /.firebase/
