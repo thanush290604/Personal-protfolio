@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
 
@@ -460,3 +461,5 @@ const AIChatbot: React.FC = () => {
 };
 
 export default AIChatbot;
+=======
+>>>>>>> 0a8aaf82d98849409cfd8dad6680146ca6185768
