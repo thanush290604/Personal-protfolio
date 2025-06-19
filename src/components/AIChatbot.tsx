@@ -333,75 +333,82 @@ const AIChatbot: React.FC = () => {
 
   return (
     <>
-      {/* Chat Toggle Button */}
+      {/* Chat Toggle Button - Positioned on the left */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 left-6 z-50 p-4 rounded-full transition-all duration-300 hover:scale-110 ${
+        className={`fixed bottom-6 left-6 z-50 p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-lg ${
           isOpen 
-            ? 'bg-red-500 hover:bg-red-600' 
-            : 'bg-gradient-to-r from-cyan-500 to-purple-600 hover:shadow-lg hover:shadow-cyan-500/25'
+            ? 'bg-red-500 hover:bg-red-600 shadow-red-500/25' 
+            : 'bg-gradient-to-r from-cyan-500 to-purple-600 hover:shadow-lg hover:shadow-cyan-500/25 animate-pulse'
         }`}
         aria-label="Toggle AI Chat"
       >
         {isOpen ? <X size={24} className="text-white" /> : <MessageCircle size={24} className="text-white" />}
+        
+        {/* Notification Badge */}
+        {!isOpen && (
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-pink-500 rounded-full animate-bounce"></div>
+        )}
       </button>
 
-      {/* Chat Window */}
+      {/* Chat Window - Positioned on the left side */}
       {isOpen && (
-        <div className="fixed bottom-24 left-6 z-50 w-96 h-[500px] bg-gradient-to-br from-black/90 to-gray-900/90 backdrop-blur-xl border border-cyan-400/30 rounded-2xl overflow-hidden animate-fade-in-up">
+        <div className="fixed bottom-24 left-6 z-50 w-80 sm:w-96 h-[500px] bg-gradient-to-br from-black/95 to-gray-900/95 backdrop-blur-xl border border-cyan-400/30 rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/10 animate-fade-in-up">
           {/* Header */}
           <div className="bg-gradient-to-r from-cyan-500 to-purple-600 p-4 text-white">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-white/20 rounded-full">
+              <div className="p-2 bg-white/20 rounded-full animate-pulse">
                 <Bot size={20} />
               </div>
-              <div>
-                <h3 className="font-bold">Thanush AI Assistant</h3>
+              <div className="flex-1">
+                <h3 className="font-bold text-lg">Thanush AI Assistant</h3>
                 <p className="text-sm opacity-90">Portfolio & Resume Expert</p>
               </div>
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
             </div>
           </div>
 
-          {/* Messages */}
-          <div className="flex-1 p-4 h-80 overflow-y-auto space-y-4">
+          {/* Messages Container */}
+          <div className="flex-1 p-4 h-80 overflow-y-auto space-y-4 bg-gradient-to-b from-transparent to-black/20">
             {messages.map((message) => (
               <div
                 key={message.id}
                 className={`flex gap-3 ${message.isBot ? 'justify-start' : 'justify-end'}`}
               >
                 {message.isBot && (
-                  <div className="p-2 bg-cyan-400/20 rounded-full flex-shrink-0">
+                  <div className="p-2 bg-cyan-400/20 rounded-full flex-shrink-0 border border-cyan-400/30">
                     <Bot size={16} className="text-cyan-400" />
                   </div>
                 )}
                 
                 <div
-                  className={`max-w-[80%] p-3 rounded-2xl ${
+                  className={`max-w-[75%] p-3 rounded-2xl backdrop-blur-sm border transition-all duration-300 hover:scale-[1.02] ${
                     message.isBot
-                      ? 'bg-white/10 text-gray-200'
-                      : 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white'
+                      ? 'bg-white/10 text-gray-200 border-white/10 hover:bg-white/15'
+                      : 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white border-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/20'
                   }`}
                 >
-                  <p className="text-sm whitespace-pre-line">{message.text}</p>
-                  <p className="text-xs opacity-70 mt-1">
+                  <p className="text-sm whitespace-pre-line leading-relaxed">{message.text}</p>
+                  <p className="text-xs opacity-70 mt-2 text-right">
                     {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </p>
                 </div>
 
                 {!message.isBot && (
-                  <div className="p-2 bg-purple-400/20 rounded-full flex-shrink-0">
+                  <div className="p-2 bg-purple-400/20 rounded-full flex-shrink-0 border border-purple-400/30">
                     <User size={16} className="text-purple-400" />
                   </div>
                 )}
               </div>
             ))}
 
+            {/* Typing Indicator */}
             {isTyping && (
               <div className="flex gap-3 justify-start">
-                <div className="p-2 bg-cyan-400/20 rounded-full flex-shrink-0">
+                <div className="p-2 bg-cyan-400/20 rounded-full flex-shrink-0 border border-cyan-400/30">
                   <Bot size={16} className="text-cyan-400" />
                 </div>
-                <div className="bg-white/10 p-3 rounded-2xl">
+                <div className="bg-white/10 p-3 rounded-2xl border border-white/10 backdrop-blur-sm">
                   <div className="flex gap-1">
                     <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"></div>
                     <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce animation-delay-200"></div>
@@ -413,24 +420,37 @@ const AIChatbot: React.FC = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
-          <div className="p-4 border-t border-white/10">
+          {/* Input Section */}
+          <div className="p-4 border-t border-white/10 bg-gradient-to-t from-black/20 to-transparent">
             <div className="flex gap-2">
               <input
                 type="text"
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Ask about education, projects, skills, achievements..."
-                className="flex-1 p-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
+                placeholder="Ask about education, projects, skills..."
+                className="flex-1 p-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 backdrop-blur-sm"
               />
               <button
                 onClick={handleSendMessage}
                 disabled={!inputText.trim() || isTyping}
-                className="p-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="p-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-cyan-500/25"
               >
                 <Send size={16} />
               </button>
+            </div>
+            
+            {/* Quick Suggestions */}
+            <div className="flex flex-wrap gap-2 mt-3">
+              {['Projects', 'Skills', 'Experience', 'Contact'].map((suggestion) => (
+                <button
+                  key={suggestion}
+                  onClick={() => setInputText(suggestion.toLowerCase())}
+                  className="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-300 hover:bg-white/10 hover:text-white transition-all duration-200"
+                >
+                  {suggestion}
+                </button>
+              ))}
             </div>
           </div>
         </div>
