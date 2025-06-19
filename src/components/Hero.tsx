@@ -4,7 +4,7 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 max-w-5xl mx-auto">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left animate-fade-in-up">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -12,13 +12,9 @@ const Hero: React.FC = () => {
                 Thanush Kannan
               </span>
             </h1>
-            <div className="text-xl sm:text-2xl lg:text-3xl text-cyan-400 font-semibold mb-8 animate-fade-in-up animation-delay-200">
+            <div className="text-xl sm:text-2xl lg:text-3xl text-cyan-400 font-semibold animate-fade-in-up animation-delay-200">
               AI Engineer
             </div>
-            <p className="text-lg sm:text-xl text-gray-400 max-w-2xl leading-relaxed animate-fade-in-up animation-delay-400">
-              Final-year B.Tech student passionate about AI, machine learning, and community-driven safety projects.
-              Building innovative solutions for smart cities and sustainable technology.
-            </p>
           </div>
           
           {/* Profile Image */}
@@ -33,7 +29,7 @@ const Hero: React.FC = () => {
                   <img
                     src="/images/placeholder.jpg"
                     alt="Thanush Kannan"
-                    className="w-80 h-80 sm:w-96 sm:h-96 object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover transition-transform duration-300 group-hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = '/images/placeholder.jpg';

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import TypingSection from './components/TypingSection';
@@ -10,8 +11,9 @@ import Contact from './components/Contact';
 import SkillsModal from './components/SkillsModal';
 import AIChatbot from './components/AIChatbot';
 import BackgroundEffects from './components/BackgroundEffects';
+import NotFound from './components/NotFound';
 
-function App() {
+function HomePage() {
   const [activeSection, setActiveSection] = useState('home');
   const [isSkillsModalOpen, setIsSkillsModalOpen] = useState(false);
 
@@ -58,6 +60,17 @@ function App() {
         onClose={() => setIsSkillsModalOpen(false)}
       />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
 
