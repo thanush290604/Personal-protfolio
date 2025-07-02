@@ -66,22 +66,22 @@ const Contact: React.FC = () => {
             </p>
 
             {/* Contact Info */}
-            <div className="flex flex-wrap justify-center gap-6 mb-8">
-              <a
-                href="mailto:thanushkannan.ai@gmail.com"
-                className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-3 hover:bg-white/10 hover:border-cyan-400/30 transition-all duration-300"
-              >
-                <Mail size={20} className="text-cyan-400" />
-                <span className="text-gray-300">thanushkannan.ai@gmail.com</span>
-              </a>
-              <a
-                href="tel:+919840650939"
-                className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-3 hover:bg-white/10 hover:border-purple-400/30 transition-all duration-300"
-              >
-                <Phone size={20} className="text-purple-400" />
-                <span className="text-gray-300">+91 9840650939</span>
-              </a>
-            </div>
+              <div className="flex flex-wrap justify-center gap-6 mb-8">
+                <a
+                  href="mailto:thanushkannan.ai@gmail.com"
+                  className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4 hover:bg-white/10 hover:border-cyan-400/30 hover:scale-105 transition-all duration-300 group"
+                >
+                  <Mail size={22} className="text-cyan-400 group-hover:text-cyan-300" />
+                  <span className="text-gray-300 group-hover:text-white font-medium">Email Me</span>
+                </a>
+                <a
+                  href="tel:+919840650939"
+                  className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4 hover:bg-white/10 hover:border-purple-400/30 hover:scale-105 transition-all duration-300 group"
+                >
+                  <Phone size={22} className="text-purple-400 group-hover:text-purple-300" />
+                  <span className="text-gray-300 group-hover:text-white font-medium">Call Me</span>
+                </a>
+              </div>
 
             {/* Resume Download Button */}
             <div className="mb-12">

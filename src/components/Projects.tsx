@@ -23,7 +23,7 @@ const Projects: React.FC = () => {
       description: "Built a real-time safe zone detection system for IBM Hackathon using YOLO V8, integrating object detection and image processing for automated safety alerts.",
       tags: ["YOLO V8", "Computer Vision", "Python", "Object Detection"],
       github: "https://github.com/thanush29/SBSPS-Challenge-10022-SafeZone-Real-time-Video-Analytics-for-Industrial-Safety-main.git",
-      demo: "https://github.com/thanush29/SBSPS-Challenge-10022-SafeZone-Real-time-Video-Analytics-for-Industrial-Safety-main.git"
+      demo: "https://safezone-ai.netlify.app/"
     }
   ];
 
