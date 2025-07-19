@@ -29,7 +29,7 @@ const About: React.FC = () => {
                 <span className="text-gradient bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-semibold"> technological advancements and societal impact</span>.
               </p>
             </div>
-
+          </div>
         </div>
       </div>
     </section>
@@ -37,5 +37,3 @@ const About: React.FC = () => {
 };
 
 export default About;
-  )
-}
