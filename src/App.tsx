@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import SkillsModal from './components/SkillsModal';
 import AIChatbot from './components/AIChatbot';
 import BackgroundEffects from './components/BackgroundEffects';
+import ProfessionalProfiles from './components/ProfessionalProfiles';
 import NotFound from './components/NotFound';
 
 function HomePage() {
@@ -53,6 +54,7 @@ function HomePage() {
       <About />
       <Experience />
       <Projects />
+      <ProfessionalProfiles />
       <Gallery />
       <Contact />
       <SkillsModal 

@@ -70,7 +70,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onOpenSkillsModa
           onClick={onOpenSkillsModal}
           className="hidden lg:flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-200 text-sm whitespace-nowrap flex-shrink-0"
         >
-          Achievements & Certifications
+          Credentials
           <Trophy size={16} />
         </button>
 
@@ -106,7 +106,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onOpenSkillsModa
             }}
             className="w-full mt-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-4 py-2 rounded-lg flex items-center justify-center gap-2"
           >
-            Achievements & Certifications
+            Credentials
             <Trophy size={16} />
           </button>
         </div>
