@@ -333,7 +333,7 @@ const AIChatbot: React.FC = () => {
 
   return (
     <>
-      {/* Chat Toggle Button - Positioned on the left */}
+      {/* Chat Toggle Button - Positioned on the left side */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed bottom-6 left-6 z-50 p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-lg ${

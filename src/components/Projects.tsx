@@ -129,12 +129,12 @@ const Projects: React.FC = () => {
         {/* Academic & Professional Recognition Section */}
         <div className="mt-20 animate-fade-in-up animation-delay-800">
           <h3 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            Academic & Professional Recognition
+            Professional Profiles & Publications
           </h3>
           
-          {/* Professional Certifications & Profiles */}
+          {/* Professional Profiles */}
           <div className="mb-16">
-            <h4 className="text-2xl font-bold text-center mb-8 text-cyan-400">Professional Certifications & Profiles</h4>
+            <h4 className="text-2xl font-bold text-center mb-8 text-cyan-400">Professional Profiles</h4>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {/* IEEE Author Profile */}
               <a
@@ -258,9 +258,9 @@ const Projects: React.FC = () => {
             </div>
           </div>
 
-          {/* IEEE Publications Section */}
+          {/* Research Publications */}
           <div>
-            <h4 className="text-2xl font-bold text-center mb-8 text-purple-400">IEEE Research Publications</h4>
+            <h4 className="text-2xl font-bold text-center mb-8 text-purple-400">Research Publications</h4>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <a
                 href="https://ieeexplore.ieee.org/document/11031508"
