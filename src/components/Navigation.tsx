@@ -39,23 +39,23 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onOpenSkillsModa
   return (
     <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ${
       scrolled ? 'bg-black/90 backdrop-blur-xl shadow-2xl shadow-cyan-500/10' : 'bg-black/40 backdrop-blur-md'
-    } border border-white/20 rounded-2xl px-4 py-3 max-w-6xl w-full mx-4`}>
-      <div className="flex items-center justify-between gap-2">
+    } border border-white/20 rounded-2xl px-3 py-2 max-w-fit`}>
+      <div className="flex items-center justify-center gap-1">
         {/* Logo/Name */}
         <button
           onClick={() => scrollToSection('#home')}
-          className="text-lg font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:scale-105 transition-all duration-300 flex-shrink-0 animate-pulse"
+          className="text-sm font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:scale-105 transition-all duration-300 px-2 py-1 whitespace-nowrap"
         >
-          Thanush Kannan
+          Thanush
         </button>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center gap-1 flex-shrink-0">
+        <div className="hidden lg:flex items-center gap-0.5">
           {navItems.map((item) => (
             <button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
-              className={`px-3 py-2 rounded-xl transition-all duration-300 text-sm whitespace-nowrap hover:scale-105 ${
+              className={`px-2 py-1 rounded-lg transition-all duration-300 text-xs whitespace-nowrap hover:scale-105 ${
                 activeSection === item.href.slice(1)
                   ? 'text-cyan-400 bg-cyan-400/20 shadow-lg shadow-cyan-400/20'
                   : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -69,29 +69,29 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onOpenSkillsModa
         {/* Credentials Button */}
         <button
           onClick={onOpenSkillsModal}
-          className="hidden lg:flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-4 py-2 rounded-xl hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 text-sm whitespace-nowrap flex-shrink-0 animate-pulse"
+          className="hidden lg:flex items-center gap-1 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-2 py-1 rounded-lg hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 text-xs whitespace-nowrap"
         >
-          <Trophy size={16} />
-          Credentials
+          <Trophy size={12} />
+          Creds
         </button>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-white p-2 flex-shrink-0 hover:scale-110 transition-transform duration-300"
+          className="lg:hidden text-white p-1 hover:scale-110 transition-transform duration-300"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden mt-4 p-4 bg-black/95 backdrop-blur-xl rounded-xl border border-white/20 animate-fade-in-up">
+        <div className="lg:hidden mt-2 p-3 bg-black/95 backdrop-blur-xl rounded-xl border border-white/20 animate-fade-in-up">
           {navItems.map((item) => (
             <button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
-              className={`block w-full text-left py-3 px-4 rounded-lg transition-all duration-300 hover:scale-105 ${
+              className={`block w-full text-left py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105 text-sm ${
                 activeSection === item.href.slice(1)
                   ? 'text-cyan-400 bg-cyan-400/20'
                   : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -105,10 +105,10 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onOpenSkillsModa
               onOpenSkillsModal();
               setIsMenuOpen(false);
             }}
-            className="w-full mt-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-4 py-3 rounded-xl flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300"
+            className="w-full mt-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-3 py-2 rounded-lg flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300 text-sm"
           >
-            <Trophy size={16} />
-            Credentials
+            <Trophy size={14} />
+            Creds
           </button>
         </div>
       )}
