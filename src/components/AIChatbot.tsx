@@ -336,10 +336,10 @@ const AIChatbot: React.FC = () => {
       {/* Chat Toggle Button - Positioned on the left side */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 left-6 z-50 p-4 rounded-full transition-all duration-300 hover:scale-110 shadow-lg ${
+        className={`fixed bottom-6 right-6 z-50 p-4 rounded-full transition-all duration-500 hover:scale-110 shadow-2xl animate-pulse ${
           isOpen 
-            ? 'bg-red-500 hover:bg-red-600 shadow-red-500/25' 
-            : 'bg-gradient-to-r from-cyan-500 to-purple-600 hover:shadow-lg hover:shadow-cyan-500/25 animate-pulse'
+            ? 'bg-red-500 hover:bg-red-600 shadow-red-500/30' 
+            : 'bg-gradient-to-r from-cyan-500 to-purple-600 hover:shadow-2xl hover:shadow-cyan-500/40'
         }`}
         aria-label="Toggle AI Chat"
       >
@@ -351,13 +351,13 @@ const AIChatbot: React.FC = () => {
         )}
       </button>
 
-      {/* Chat Window - Positioned on the left side */}
+      {/* Chat Window - Positioned on the right side */}
       {isOpen && (
-        <div className="fixed bottom-24 left-6 z-50 w-80 sm:w-96 h-[500px] bg-gradient-to-br from-black/95 to-gray-900/95 backdrop-blur-xl border border-cyan-400/30 rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/10 animate-fade-in-up">
+        <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 h-[500px] bg-gradient-to-br from-black/95 to-gray-900/95 backdrop-blur-xl border border-cyan-400/30 rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/20 animate-fade-in-up">
           {/* Header */}
-          <div className="bg-gradient-to-r from-cyan-500 to-purple-600 p-4 text-white">
+          <div className="bg-gradient-to-r from-cyan-500 to-purple-600 p-4 text-white animate-gradient-x">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-white/20 rounded-full animate-pulse">
+              <div className="p-2 bg-white/20 rounded-full animate-bounce">
                 <Bot size={20} />
               </div>
               <div className="flex-1">

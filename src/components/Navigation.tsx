@@ -15,6 +15,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onOpenSkillsModa
     { href: '#about', label: 'About' },
     { href: '#experience', label: 'Experience' },
     { href: '#projects', label: 'Projects' },
+    { href: '#profiles', label: 'Profiles' },
     { href: '#gallery', label: 'Gallery' },
     { href: '#contact', label: 'Contact' },
   ];
@@ -36,14 +37,14 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onOpenSkillsModa
   };
 
   return (
-    <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-black/80' : 'bg-black/30'
-    } backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-3 max-w-fit`}>
-      <div className="flex items-center justify-between gap-4 min-w-0">
+    <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ${
+      scrolled ? 'bg-black/90 backdrop-blur-xl shadow-2xl shadow-cyan-500/10' : 'bg-black/40 backdrop-blur-md'
+    } border border-white/20 rounded-2xl px-4 py-3 max-w-6xl w-full mx-4`}>
+      <div className="flex items-center justify-between gap-2">
         {/* Logo/Name */}
         <button
           onClick={() => scrollToSection('#home')}
-          className="text-lg font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-200 flex-shrink-0"
+          className="text-lg font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:scale-105 transition-all duration-300 flex-shrink-0 animate-pulse"
         >
           Thanush Kannan
         </button>
@@ -54,10 +55,10 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onOpenSkillsModa
             <button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
-              className={`px-3 py-2 rounded-lg transition-all duration-200 text-sm whitespace-nowrap ${
+              className={`px-3 py-2 rounded-xl transition-all duration-300 text-sm whitespace-nowrap hover:scale-105 ${
                 activeSection === item.href.slice(1)
-                  ? 'text-cyan-400 bg-cyan-400/10'
-                  : 'text-gray-300 hover:text-white hover:bg-white/5'
+                  ? 'text-cyan-400 bg-cyan-400/20 shadow-lg shadow-cyan-400/20'
+                  : 'text-gray-300 hover:text-white hover:bg-white/10'
               }`}
             >
               {item.label}
@@ -65,18 +66,18 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onOpenSkillsModa
           ))}
         </div>
 
-        {/* Skills Button */}
+        {/* Credentials Button */}
         <button
           onClick={onOpenSkillsModal}
-          className="hidden lg:flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-200 text-sm whitespace-nowrap flex-shrink-0"
+          className="hidden lg:flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-4 py-2 rounded-xl hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 text-sm whitespace-nowrap flex-shrink-0 animate-pulse"
         >
-          Credentials
           <Trophy size={16} />
+          Credentials
         </button>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-white p-2 flex-shrink-0"
+          className="lg:hidden text-white p-2 flex-shrink-0 hover:scale-110 transition-transform duration-300"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -85,15 +86,15 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onOpenSkillsModa
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden mt-4 p-4 bg-black/95 backdrop-blur-md rounded-lg border border-white/10">
+        <div className="lg:hidden mt-4 p-4 bg-black/95 backdrop-blur-xl rounded-xl border border-white/20 animate-fade-in-up">
           {navItems.map((item) => (
             <button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
-              className={`block w-full text-left py-3 px-2 rounded-lg transition-colors duration-200 ${
+              className={`block w-full text-left py-3 px-4 rounded-lg transition-all duration-300 hover:scale-105 ${
                 activeSection === item.href.slice(1)
-                  ? 'text-cyan-400'
-                  : 'text-gray-300 hover:text-white'
+                  ? 'text-cyan-400 bg-cyan-400/20'
+                  : 'text-gray-300 hover:text-white hover:bg-white/10'
               }`}
             >
               {item.label}
@@ -104,10 +105,10 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onOpenSkillsModa
               onOpenSkillsModal();
               setIsMenuOpen(false);
             }}
-            className="w-full mt-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-4 py-2 rounded-lg flex items-center justify-center gap-2"
+            className="w-full mt-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-4 py-3 rounded-xl flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300"
           >
-            Credentials
             <Trophy size={16} />
+            Credentials
           </button>
         </div>
       )}
