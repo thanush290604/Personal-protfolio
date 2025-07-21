@@ -343,7 +343,7 @@ const AIChatbot: React.FC = () => {
         }`}
         aria-label="Toggle AI Chat"
       >
-        {isOpen ? <X size={24} className="text-white" /> : <MessageCircle size={24} className="text-white" />}
+        {isOpen ? <X size={24} className="text-white" /> : <MessageCircle size={24} className="text-white transform scale-x-[-1]" />}
         
         {/* Notification Badge */}
         {!isOpen && (
