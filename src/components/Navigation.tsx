@@ -37,14 +37,14 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onOpenSkillsModa
   };
 
   return (
-    <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ${
+    <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-700 hover:scale-105 ${
       scrolled ? 'bg-black/90 backdrop-blur-xl shadow-2xl shadow-cyan-500/10' : 'bg-black/40 backdrop-blur-md'
-    } border border-white/20 rounded-2xl px-3 py-2 max-w-fit`}>
+    } border border-white/20 hover:border-cyan-400/30 rounded-2xl px-3 py-2 max-w-fit`}>
       <div className="flex items-center justify-center gap-1">
         {/* Logo/Name */}
         <button
           onClick={() => scrollToSection('#home')}
-          className="text-sm font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:scale-105 transition-all duration-300 px-2 py-1 whitespace-nowrap"
+          className="text-sm font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent hover:scale-110 hover:rotate-1 transition-all duration-300 px-2 py-1 whitespace-nowrap"
         >
           Thanush
         </button>

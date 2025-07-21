@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
+import { X, Send, Bot, User } from 'lucide-react';
 
 interface Message {
   id: number;
@@ -336,18 +336,54 @@ const AIChatbot: React.FC = () => {
       {/* Chat Toggle Button - Positioned on the left side */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 z-50 p-4 rounded-full transition-all duration-500 hover:scale-110 shadow-2xl animate-pulse ${
+        className={`fixed bottom-6 right-6 z-50 p-4 rounded-full transition-all duration-500 hover:scale-110 shadow-2xl group ${
           isOpen 
             ? 'bg-red-500 hover:bg-red-600 shadow-red-500/30' 
-            : 'bg-gradient-to-r from-cyan-500 to-purple-600 hover:shadow-2xl hover:shadow-cyan-500/40'
+            : 'bg-gradient-to-r from-cyan-500 to-purple-600 hover:shadow-2xl hover:shadow-cyan-500/40 animate-pulse'
         }`}
         aria-label="Toggle AI Chat"
       >
-        {isOpen ? <X size={24} className="text-white" /> : <MessageCircle size={24} className="text-white transform scale-x-[-1]" />}
+        {isOpen ? (
+          <X size={24} className="text-white" />
+        ) : (
+          <div className="relative">
+            {/* AI Robot Icon */}
+            <svg 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              className="text-white group-hover:animate-bounce"
+            >
+              {/* Robot Head */}
+              <rect x="6" y="6" width="12" height="10" rx="2" fill="currentColor" />
+              {/* Robot Eyes */}
+              <circle cx="9" cy="9" r="1" fill="#000" />
+              <circle cx="15" cy="9" r="1" fill="#000" />
+              {/* Robot Mouth */}
+              <rect x="10" y="12" width="4" height="1" rx="0.5" fill="#000" />
+              {/* Robot Antenna */}
+              <line x1="12" y1="6" x2="12" y2="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <circle cx="12" cy="3" r="1" fill="currentColor" />
+              {/* Robot Body */}
+              <rect x="8" y="16" width="8" height="4" rx="1" fill="currentColor" />
+              {/* Robot Arms */}
+              <rect x="4" y="10" width="2" height="6" rx="1" fill="currentColor" />
+              <rect x="18" y="10" width="2" height="6" rx="1" fill="currentColor" />
+              {/* Robot Legs */}
+              <rect x="9" y="20" width="2" height="3" rx="1" fill="currentColor" />
+              <rect x="13" y="20" width="2" height="3" rx="1" fill="currentColor" />
+            </svg>
+            {/* Glowing Effect */}
+            <div className="absolute inset-0 bg-white/20 rounded-full animate-ping opacity-75"></div>
+          </div>
+        )}
         
         {/* Notification Badge */}
         {!isOpen && (
-          <div className="absolute -top-1 -right-1 w-3 h-3 bg-pink-500 rounded-full animate-bounce"></div>
+          <div className="absolute -top-1 -right-1 w-3 h-3 bg-pink-500 rounded-full animate-bounce">
+            <div className="absolute inset-0 bg-pink-400 rounded-full animate-ping"></div>
+          </div>
         )}
       </button>
 

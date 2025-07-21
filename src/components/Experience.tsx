@@ -57,10 +57,10 @@ const Experience: React.FC = () => {
               <div className="hidden md:block absolute left-1/2 top-8 w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full transform -translate-x-1/2 z-10"></div>
               
               <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:ml-auto md:pl-16' : 'md:pr-16'}`}>
-                <div className="group bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-cyan-400/30 hover:shadow-lg hover:shadow-cyan-400/10 transition-all duration-500 hover:-translate-y-2">
+                <div className="group bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/15 hover:border-cyan-400/30 hover:shadow-2xl hover:shadow-cyan-400/20 hover:-translate-y-4 hover:scale-105 transition-all duration-700">
                   {/* Company Logo */}
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-white/10 rounded-xl p-2 group-hover:bg-white/20 transition-all duration-300">
+                    <div className="w-16 h-16 bg-white/10 rounded-xl p-2 group-hover:bg-white/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                       <img
                         src={exp.logo}
                         alt={`${exp.title} logo`}
@@ -72,20 +72,20 @@ const Experience: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 group-hover:scale-105 transition-all duration-300">
                         {exp.title}
                       </h3>
-                      <p className="text-cyan-400 font-semibold">{exp.period}</p>
+                      <p className="text-cyan-400 font-semibold group-hover:text-purple-400 transition-colors duration-300">{exp.period}</p>
                     </div>
                   </div>
                   
-                  <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                  <p className="text-gray-300 leading-relaxed group-hover:text-gray-100 transition-colors duration-300">
                     {exp.description}
                   </p>
 
                   {/* Hover Glow Effect */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/10 via-purple-400/10 to-pink-400/10 blur-xl"></div>
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-pink-400/20 blur-xl"></div>
                   </div>
                 </div>
               </div>

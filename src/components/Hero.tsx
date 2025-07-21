@@ -7,12 +7,12 @@ const Hero: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 max-w-5xl mx-auto">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left animate-fade-in-up">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight hover:scale-105 transition-transform duration-500">
               <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Thanush Kannan
               </span>
             </h1>
-            <div className="text-xl sm:text-2xl lg:text-3xl text-cyan-400 font-semibold animate-fade-in-up animation-delay-200">
+            <div className="text-xl sm:text-2xl lg:text-3xl text-cyan-400 font-semibold animate-fade-in-up animation-delay-200 hover:text-purple-400 transition-colors duration-300">
               AI Engineer
             </div>
           </div>

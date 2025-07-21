@@ -59,18 +59,19 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/15 hover:border-cyan-400/50 transition-all duration-700 hover:-translate-y-6 hover:rotate-1 cursor-pointer animate-fade-in-up animation-delay-${(index + 1) * 200} overflow-hidden`}
+              className={`group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/20 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-700 hover:-translate-y-8 hover:rotate-2 hover:scale-105 cursor-pointer animate-fade-in-up animation-delay-${(index + 1) * 200} overflow-hidden`}
             >
               {/* Animated Background Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-cyan-500/10 group-hover:via-purple-500/5 group-hover:to-pink-500/10 transition-all duration-700 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-cyan-500/20 group-hover:via-purple-500/10 group-hover:to-pink-500/15 transition-all duration-700 rounded-2xl"></div>
               
               {/* Floating Particles */}
-              <div className="absolute top-4 right-4 w-2 h-2 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-60 group-hover:animate-bounce transition-all duration-500"></div>
-              <div className="absolute bottom-6 left-6 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-80 group-hover:animate-bounce animation-delay-200 transition-all duration-500"></div>
+              <div className="absolute top-4 right-4 w-3 h-3 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-80 group-hover:animate-bounce transition-all duration-500"></div>
+              <div className="absolute bottom-6 left-6 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-90 group-hover:animate-bounce animation-delay-200 transition-all duration-500"></div>
+              <div className="absolute top-1/2 left-4 w-1 h-1 bg-pink-400 rounded-full opacity-0 group-hover:opacity-70 group-hover:animate-bounce animation-delay-400 transition-all duration-500"></div>
 
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-6">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-500 group-hover:scale-105 transform">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-1 transform">
                     {project.title}
                   </h3>
                   <div className="flex gap-3 ml-4">
@@ -78,7 +79,7 @@ const Projects: React.FC = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 bg-white/10 rounded-lg hover:bg-cyan-400/20 hover:scale-110 transition-all duration-300 group/icon"
+                      className="p-2 bg-white/10 rounded-lg hover:bg-cyan-400/30 hover:scale-125 hover:rotate-12 transition-all duration-300 group/icon"
                       aria-label="View on GitHub"
                     >
                       <FaGithub 
@@ -90,7 +91,7 @@ const Projects: React.FC = () => {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 bg-white/10 rounded-lg hover:bg-purple-400/20 hover:scale-110 transition-all duration-300 group/icon"
+                      className="p-2 bg-white/10 rounded-lg hover:bg-purple-400/30 hover:scale-125 hover:-rotate-12 transition-all duration-300 group/icon"
                       aria-label="View Demo"
                     >
                       <ExternalLink 
@@ -101,7 +102,7 @@ const Projects: React.FC = () => {
                   </div>
                 </div>
                 
-                <p className="text-gray-300 leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-500 transform group-hover:scale-[1.02]">
+                <p className="text-gray-300 leading-relaxed mb-6 group-hover:text-gray-100 transition-colors duration-500 transform group-hover:scale-[1.03]">
                   {project.description}
                 </p>
                 
@@ -109,7 +110,7 @@ const Projects: React.FC = () => {
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-sm font-medium group-hover:bg-cyan-400/30 group-hover:text-cyan-300 group-hover:scale-105 transition-all duration-500"
+                      className="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-sm font-medium group-hover:bg-cyan-400/40 group-hover:text-cyan-200 group-hover:scale-110 hover:rotate-3 transition-all duration-500"
                       style={{ animationDelay: `${tagIndex * 100}ms` }}
                     >
                       {tag}
@@ -118,8 +119,8 @@ const Projects: React.FC = () => {
                 </div>
 
                 {/* Hover Glow Effect */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-pink-400/20 blur-xl"></div>
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/30 via-purple-400/30 to-pink-400/30 blur-2xl"></div>
                 </div>
               </div>
             </div>
